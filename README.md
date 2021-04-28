@@ -1,6 +1,5 @@
 # Boomshark Introduction
 
-BUTTON!!!!!!
 ---
 
 > Be sure to add that lovely star 😀 and fork it for your own copy
@@ -40,6 +39,3 @@ connect-mongo, dotenv, ejs, express, express-session, mongodb, mongoose, morgan,
 
  Have fun testing and improving it! 😎
 
-
---- Teejay added this one
---- checking
