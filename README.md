@@ -2,7 +2,7 @@
 
 ---
 
-> Be sure to add that lovely star 😀 and fork it for your own copy
+Boomshark will be an app for sharing projects that you're working on. Posts will include a title, image, description, and a link to the live url or github (and maybe tagging as well if we can get added within a week). 
 
 ---
 
@@ -37,5 +37,4 @@ connect-mongo, dotenv, ejs, express, express-session, mongodb, mongoose, morgan,
   - DB_STRING: `your database URI`
  ---
 
- Have fun testing and improving it! 😎
 
