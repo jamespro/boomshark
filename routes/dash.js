@@ -1,11 +1,11 @@
 const express = require('express')
 const router = express.Router()
-const postsController = require('../controllers/dash') 
+const dashController = require('../controllers/dash') 
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
-router.get('/', ensureAuth, todosController.getTodos)
+router.get('/', ensureAuth, dashController.getTodos)
 
-router.post('/createPost', todosController.createPost)
+router.post('/createPost', dashController.createPost)
 
 router.put('/markComplete', todosController.markComplete)
 
