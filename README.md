@@ -1,4 +1,12 @@
-# Boomshark Introduction
+# Boomshark
+
+![Boomshark](https://raw.githubusercontent.com/jamespro/boomshark/main/public/img/banner.png)
+
+* Demo: [https://boomshark.herokuapp.com/](https://boomshark.herokuapp.com/)
+
+---
+
+# Introduction
 
 ---
 
