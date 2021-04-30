@@ -9,17 +9,16 @@
 </head>
 <body>
     <header>Logo goes here</header>
-    <h1>PROFILE</h1>
-    <h2>User name: <%= user.userName %> </h2>
-    <h2>Email: <%= user.email %> </h2>
+    <h1>FEED</h1>
+    <h2>User name: <!--%= user.userName %--> .</h2>
+    <h2>Email: <!--%= user.email %--> .</h2>
 
-    <h3>Add a Boom</h3>
-
-    <form action="/profile/createPost" method='POST'>
-        <input type="text" placeholder="Enter Title" name='postTitle'>
-        <input type="text" placeholder="Caption" name='postCaption'>
-        <input type="submit" value="Post">
-    </form>
+    <h2>Posts</h2>
+    <h1>Todos</h1>
+    <ul> 
+   
+    
+    </ul>
     
     <a href="/logout">Logout</a>
     <a href="/feed">Return to feed</a>

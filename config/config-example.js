@@ -1,48 +1,48 @@
-//only need to change client id here
+// //only need to change client id here
 
-exports.creds = {
-	identityMetadata: 'https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration', 
+// exports.creds = {
+// 	identityMetadata: 'https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration', 
 
-	clientID: '<add your own>',
+// 	clientID: '<add your own>',
   
-	clientSecret: '<add your own>', 
+// 	clientSecret: '<add your own>', 
   
-	responseType: 'code id_token', 
+// 	responseType: 'code id_token', 
   
-	responseMode: 'form_post', 
+// 	responseMode: 'form_post', 
   
-	redirectUrl: 'http://localhost:2121/auth/openid/return', 
+// 	redirectUrl: 'http://localhost:2121/auth/openid/return', 
   
-	allowHttpForRedirectUrl: true,
+// 	allowHttpForRedirectUrl: true,
   
-	validateIssuer: false,
+// 	validateIssuer: false,
   
-	issuer: null,
+// 	issuer: null,
   
-	passReqToCallback: false,
+// 	passReqToCallback: false,
   
-	useCookieInsteadOfSession: false,
+// 	useCookieInsteadOfSession: false,
   
-	cookieEncryptionKeys: [ 
-	  { 'key': '12345678901234567890123456789012', 'iv': '123456789012' },
-	  { 'key': 'abcdefghijklmnopqrstuvwxyzabcdef', 'iv': 'abcdefghijkl' }
-	],
+// 	cookieEncryptionKeys: [ 
+// 	  { 'key': '12345678901234567890123456789012', 'iv': '123456789012' },
+// 	  { 'key': 'abcdefghijklmnopqrstuvwxyzabcdef', 'iv': 'abcdefghijkl' }
+// 	],
   
-	scope: ['profile', 'offline_access', 'https://graph.microsoft.com/mail.read'],
+// 	scope: ['profile', 'offline_access', 'https://graph.microsoft.com/mail.read'],
   
-	loggingLevel: false,
+// 	loggingLevel: false,
   
-	nonceLifetime: null,
+// 	nonceLifetime: null,
   
-	nonceMaxAmount: 5,
+// 	nonceMaxAmount: 5,
   
-	clockSkew: null,
-  };
+// 	clockSkew: null,
+//   };
   
-  exports.destroySessionUrl = 'http://localhost:2121';
+//   exports.destroySessionUrl = 'http://localhost:2121';
   
-  exports.useMongoDBSessionStore = false;
+//   exports.useMongoDBSessionStore = false;
   
-  exports.databaseUri = 'mongodb://localhost/OIDCStrategy';
+//   exports.databaseUri = 'mongodb://localhost/OIDCStrategy';
   
-  exports.mongoDBSessionMaxAge = 24 * 60 * 60;  
+//   exports.mongoDBSessionMaxAge = 24 * 60 * 60;  

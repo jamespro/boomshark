@@ -3,7 +3,7 @@ const Post = require('../models/Post')
 module.exports = {
     //retrieve Posts
     getPost: async (req,res)=>{
-        console.log(req.user)
+        console.log(req.client)
         try{
             const postTitle = await Post.find({userId:req.user.id})
             const postCaption = await Post.countDocuments({userId:req.user.id})
