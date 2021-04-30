@@ -8,25 +8,21 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Dashboard</h1>
-    <ul>
-    <% todos.forEach( el => { %>
-            <li class='todoItem' data-id='<%=el._id%>'>
-                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
-                <span class='del'> Delete </span>
-            </li>
-    <% }) %>    
-    </ul>
+    <header>Logo goes here</header>
+    <h1>PROFILE</h1>
+    <h2>User name: <!--%= user.userName %--> .</h2>
+    <h2>Email: <!--%= user.email %--> .</h2>
 
-    <h2>User name: <%= user.userName %> has <%= left %> things left to do.</h2>
+    <h3>Add a Boom</h3>
 
-    <form action="/dash/createPost" method='POST'>
+    <form action="/profile/createPost" method='POST'>
         <input type="text" placeholder="Enter Title" name='postTitle'>
         <input type="text" placeholder="Caption" name='postCaption'>
-        <input type="submit">
+        <input type="submit" value="Post">
     </form>
-
+    
     <a href="/logout">Logout</a>
+    <a href="/feed">Return to feed</a>
 
     <script src="js/main.js"></script>
 </body>
