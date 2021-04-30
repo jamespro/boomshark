@@ -32,5 +32,6 @@
   "bugs": {
     "url": "https://github.com/jamespro/boomshark/issues"
   },
-  "homepage": "https://github.com/jamespro/boomshark#readme"
+  "homepage": "https://github.com/jamespro/boomshark#readme",
+  "devDependencies": {}
 }
