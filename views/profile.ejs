@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
-    <link rel="stylesheet" href="css/style.css">
+    <%- include('../views/partials/head'); %>
 </head>
 <body>
-    <header>Logo goes here</header>
+    <header>
+        <%- include('../views/partials/header'); %>
+    </header>
+
     <h1>PROFILE</h1>
     <h2>User name: <!--%= user.userName %--> .</h2>
     <h2>Email: <!--%= user.email %--> .</h2>
