@@ -14,7 +14,7 @@
 
     <h3>Add a Boom</h3>
 
-    <form action="/profile/createPost" method='POST'>
+    <form action="/post/createPost" method='POST'>
         <p><label for="postTitle">Title</label><br /><input type="text" placeholder="Enter Title" name='postTitle'></p>
         <p><label for="postCaption">Description</label><br /><input type="text" placeholder="Caption" name='postCaption'></p>
         <p><label for="postImage">Image</label><br /><input type="text" placeholder="Image" name='postImage'></p>
@@ -24,6 +24,18 @@
     
     <a href="/logout">Logout</a>
     <a href="/feed">Return to feed</a>
+
+    <h3>Posts for <%= user.userName %></h3>
+    <ul>
+        <% for (var i=0; i < posts.length; i++) { %>
+        <li>
+            <p class="title"><a href="/post/<%= posts[i]._id%>"><%= posts[i].title %></a></p>
+            <p class="caption"><%= posts[i].caption %></p>
+            <p class="image"><a href="<%= posts[i].link %>" class=""><img class="" src="<%= posts[i].image %>" /></a></p>
+            <p class="link"><a href="<%= posts[i].link %>" class=""><%= posts[i].link %></a></p>
+        </li>
+        <% } %>
+    </ul>
 
     <script src="js/main.js"></script>
 </body>
