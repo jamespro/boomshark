@@ -7,7 +7,16 @@ module.exports = {
         try{
             const postTitle = await Post.find({userId:req.user.id})
             const postCaption = await Post.countDocuments({userId:req.user.id})
-            res.render('profile.ejs', {title: postTitle, caption: postCaption, user: req.user})
+//TODO: FIX THESE, THESE ARE NOT RIGHT. WE NEED TO GET THE DETAILS OF EACH POST
+            const postImage = await Post.countDocuments({userId:req.user.id})
+            const postLink = await Post.countDocuments({userId:req.user.id})
+            res.render('profile.ejs', {
+                title: postTitle,
+                caption: postCaption,
+                image: postImage,
+                link: postLink,
+                user: req.user
+            })
         }catch(err){
             console.log(err)
         }
@@ -15,7 +24,13 @@ module.exports = {
     //create Post, the action is found in .views/dash.ejs
     createPost: async (req, res)=>{
         try{
-            await Post.create({post: req.body.postTitle, caption: req.body.postCaption, userId: req.user.id})
+            await Post.create({
+                post: req.body.postTitle,
+                caption: req.body.postCaption,
+                image: req.body.postImage,
+                link: req.body.postLink,
+                userId: req.user.id
+            })
             console.log('Post has been added!')
             res.redirect('/profile')
         }catch(err){

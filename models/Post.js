@@ -9,9 +9,13 @@ const PostSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  userId: {
+  image: {
     type: String,
     required: true
+  },
+  link: {
+    type: String,
+    required: false
   }
 })
 
