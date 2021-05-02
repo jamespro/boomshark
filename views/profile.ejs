@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../views/partials/head'); %>
+</head>
+<body>
+    <header>
+        <%- include('../views/partials/header'); %>
+    </header>
+
+    <h1>PROFILE</h1>
+    <h2>User name: <%=user.userName %></h2>
+    <h2>Email: <%= user.email %></h2>
+
+    <h3>Add a Boom</h3>
+
+    <form action="/profile/createPost" method='POST'>
+        <p><label for="postTitle">Title</label><br /><input type="text" placeholder="Enter Title" name='postTitle'></p>
+        <p><label for="postCaption">Description</label><br /><input type="text" placeholder="Caption" name='postCaption'></p>
+        <p><label for="postImage">Image</label><br /><input type="text" placeholder="Image" name='postImage'></p>
+        <p><label for="postLink">Link</label><br /><input type="text" placeholder="Image" name='postLink'></p>
+        <p><input type="submit" value="post"></p>
+    </form>
+    
+    <a href="/logout">Logout</a>
+    <a href="/feed">Return to feed</a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
