@@ -8,3 +8,25 @@ h1{
 .not{
     text-decoration: underline;
 }
+
+/**
+
+Styles to define:
+- Primary Color
+- Primary Button
+- Secondary Button
+- Danger Button
+- Font
+-- Headings
+-- Paragraph
+-- Color
+-- Sizes
+
+**/
+
+img{
+    height:50vh;
+}
+h1{
+    color:red;
+}
