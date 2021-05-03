@@ -18,10 +18,22 @@
             <div class="alert alert-danger"><%= el.msg %></div>
         <% }) %>    
     <% } %>
-    <form action="/login" method="POST">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="submit">
-    </form>
+
+    <section class="form-parent">
+        <form action="/login" method="POST">
+            <label for="email">Email Address</label>
+            <input type="email" name="email" placeholder="Email">
+
+            <label for="password"> Password</label>
+            <input type="password" name="password" placeholder="Password">
+            <section class="signup-buttons">
+                <a href="/">
+                    <input type="button" value="Back" class="sec-button">
+                </a>
+                <input value="Signin" type="submit" class="main-button">
+            </section>  
+        </form>
+    </section>
+   
 </body>
 </html>
