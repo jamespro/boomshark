@@ -2,12 +2,21 @@
 <html lang="en">
 <head>
     <%- include('../views/partials/head'); %>
+   
 </head>
 <body>
     <header> 
     <%- include('../views/partials/header'); %>
     </header>
-    <a href="/login"> Login</a>
-    <a href="/signup"> Signup</a>
+
+    <div class= "landingPageButton">
+        <form action="./login" method="GET">
+            <button type="submit">Login</button>
+        </form>
+        <form action="./signup">
+            <button type="submit">SignUp</button>
+        </form>
+    </div>
+    <div class="landingPageImg">THE Boom Feed Here</div>
 </body>
 </html>

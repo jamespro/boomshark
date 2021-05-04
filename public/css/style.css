@@ -40,6 +40,7 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
   }
+  
 
   /***
 Styles to define:
@@ -137,7 +138,42 @@ route-links{
      align-items: center;
  }
 
- /* PROFILE PAGE STYLE */
+/******************************************
+/* Landing Page
+/*******************************************/
+ .landingPageButton{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .landingPageButton > form > button{
+
+    width: 6.7em;
+    height: 2em;
+    margin: 0px 10px ;
+    color: white;
+    background: #4FA8FF;
+    border-color: white;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    font-size: 30px;
+    
+ }
+
+ .landingPageImg{
+    
+     margin: 5% 10%;
+     height: 100vh;
+     
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     
+     background: hsla(0, 47%, 81%, 0.932);
+     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+ }
+
+/* PROFILE PAGE STYLE */
 
  .center-align-items{
      display: flex;
