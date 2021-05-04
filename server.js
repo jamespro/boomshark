@@ -44,8 +44,8 @@ app.use('/', mainRoutes)
 app.use('/post', postRoutes)
  
 
-let port = 3000
-app.listen((process.env.PORT || port), ()=>{
+
+app.listen((process.env.PORT), ()=>{
     console.log('Server is running, you better catch it!')
-    console.log()
+    console.log(process.env.PORT)
 })    

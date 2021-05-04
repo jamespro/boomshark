@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../views/partials/head'); %>
+</head>
+<body>
+    <header>
+        <%- include('../views/partials/header'); %>
+    </header>
+    
+        <% for(let x in posts) { %>
+        <section class="postRow">
+            <div class="postColum">
+                <%=posts[x].title%>
+                <a href="/post/<%=posts[x]._id%>">
+                <img src=#> Images Goes here
+                </a>
+            </div>
+        </section>
+        <%}%>
+
+        
+         
+    </section>
+    <p> Testing</p>
+    
+        
+
+    <script src="js/main.js"></script>
+</body>
+</html>

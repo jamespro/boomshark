@@ -5,10 +5,10 @@ const PostSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  image: {
-    type: String,
-    required: true
-  },
+  // image: {
+  //   type: String,
+  //   required: true
+  // },
 //   cloudinaryId: {
 //     type: String,
 //     require: true,
@@ -21,10 +21,10 @@ const PostSchema = new mongoose.Schema({
     type: String,
     required: false
   },
-//   likes: {
-//     type: Number,
-//     required: true,
-//   },
+  likes: {
+    type: Number,
+    required: true,
+  },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",

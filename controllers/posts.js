@@ -9,16 +9,16 @@ module.exports = {
       console.log(err);
     }
   },
-  //FEED WILL GO HERE
-    //
-//   getFeed: async (req, res) => {
-//     try {
-//       const posts = await Post.find().sort({ createdAt: "desc" }).lean();
-//       res.render("feed.ejs", { posts: posts });
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   },
+//   FEED WILL GO HERE
+    
+  getFeed: async (req, res) => {
+    try {
+      const posts = await Post.find().sort({ createdAt: "desc" }).lean();
+      res.render('feed.ejs', { posts: posts });
+    } catch (err) {
+      console.log(err);
+    }
+  },
 
     //retrieve Posts
     getPost: async (req,res)=>{
@@ -38,9 +38,10 @@ module.exports = {
         try{
             await Post.create({
                 title: req.body.postTitle,
-                image: req.body.postImage,
+                //image: req.body.postImage,
                 caption: req.body.postCaption,
                 link: req.body.postLink,
+                likes: 1,
                 user: req.user.id
             })
             console.log('Post has been added!')

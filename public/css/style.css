@@ -225,3 +225,31 @@ route-links{
  .main-button-distinct{
      background: #d8ebff;
  }
+
+
+
+ /* Feed */
+ .postRow{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap; 
+ }
+
+ .postRow{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+
+ }
+ .postColum{
+    
+    width: 400px;
+    height: 400px;
+    background: rgb(179, 36, 36);
+    margin: 20px 60px;
+    border: red 2px solid;
+   
+ }
