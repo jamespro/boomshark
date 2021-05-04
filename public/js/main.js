@@ -1,5 +1,6 @@
 const deleteBtn = document.querySelectorAll('.del')
 
+
 Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deletePost)
 })
