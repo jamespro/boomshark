@@ -138,9 +138,6 @@ route-links{
      align-items: center;
  }
 
-
-
-
 /******************************************
 /* Landing Page
 /*******************************************/
@@ -175,6 +172,56 @@ route-links{
      background: hsla(0, 47%, 81%, 0.932);
      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
  }
- /******************************************
-/* Landing Page
-/*******************************************/
+
+/* PROFILE PAGE STYLE */
+
+ .center-align-items{
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     width: 100%;
+     
+ }
+
+ .center-align-items > h3:first-child{
+     margin-right: 280px;
+ }
+
+ .card{
+    box-shadow: 0px 7px 30px -10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0px 300px;
+ }
+
+ .single-button{
+     width: 50%;
+ }
+
+ .inner-button-link{
+     display: inline;
+ }
+
+ .inner-text-button{
+     display: inline;
+     margin-left: -582px;
+     height: 41px;
+     /* background: #f5f5f5; */
+     /* border: 1px #f5f5f5 solid; */
+     padding: 10px;
+     border-radius: 5px;
+ }
+
+ .warning{
+     border: orange 2px solid;
+     color: orange;
+ }
+
+ .danger{
+    border: tomato 2px solid;
+    color: tomato;
+ }
+
+ .main-button-distinct{
+     background: #d8ebff;
+ }
