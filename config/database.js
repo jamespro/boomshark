@@ -3,6 +3,9 @@ const mongoose = require('mongoose')
 
 require('dotenv').config()
 
+
+process.env.DB_STRING = "mongodb+srv://demo:test@cluster0.nvjw1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+
 const connectDB = async () => {
   try {
     const conn = await mongoose.connect(process.env.DB_STRING, {
