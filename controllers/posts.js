@@ -1,3 +1,4 @@
+const { ObjectID } = require('bson');
 const Post = require('../models/Post')
 
 module.exports = {
@@ -22,7 +23,8 @@ module.exports = {
 
     //retrieve Posts
     getPost: async (req,res)=>{
-        console.log(req.user)
+        //console.log(req.user)
+       
         try {
             const post = await Post.findById(req.params.id);
             res.render('post.ejs', {
@@ -51,14 +53,36 @@ module.exports = {
         }
     },
     //likePost will go here
+    addLike: async (req, res)=>{
+
+        console.log("chieck")
+        try {
+            
+            await Post.updateOne({
+                _id: req.params.id,
+            },{
+                $set: {likes: req.body.like+1}
+            })
+        } catch (error) {
+            console.log(error)
+        }
+        res.json("Like")
+
+    },
+   
     deletePost: async (req, res)=>{
-        console.log(req.body.postIdFromJSFile)
+
+        console.log(req.params.id)
+       
         try{
-            await Post.findOneAndDelete({_id:req.body.postIdFromJSFile})
+            await Post.findOneAndDelete({_id:req.params.id})
             console.log('Deleted Post')
-            res.json('Deleted It')
+            
+           
+            
         }catch(err){
             console.log(err)
         }
+        res.redirect('/feed')
     }
 }    

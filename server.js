@@ -9,7 +9,8 @@ const logger = require('morgan')
 const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const postRoutes = require('./routes/posts')
-// const profileRoutes = require('./routes/profile')
+const methodOverride = require('method-override')
+const profileRoutes = require('./routes/profile')
 
 require('dotenv').config({path: './config/config.env'})
 
@@ -37,12 +38,16 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session())
 
+//Use forms for put / delete
+app.use(methodOverride("_method"));
+
 app.use(flash())
   
 app.use('/', mainRoutes)
 // app.use('/profile', profileRoutes)
 app.use('/post', postRoutes)
  
+
 
 
 app.listen((process.env.PORT), ()=>{
