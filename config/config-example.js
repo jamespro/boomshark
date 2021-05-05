@@ -43,6 +43,6 @@ exports.creds = {
   
   exports.useMongoDBSessionStore = false;
   
-  exports.databaseUri = 'mongodb://localhost/OIDCStrategy';
+exports.databaseUri = 'mongodb+srv://demo:test@cluster0.nvjw1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
   
   exports.mongoDBSessionMaxAge = 24 * 60 * 60;  

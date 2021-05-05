@@ -43,6 +43,9 @@ app.use('/', mainRoutes)
 // app.use('/profile', profileRoutes)
 app.use('/post', postRoutes)
  
-app.listen(process.env.PORT, ()=>{
+
+let port = 3000
+app.listen((process.env.PORT || port), ()=>{
     console.log('Server is running, you better catch it!')
+    console.log()
 })    
