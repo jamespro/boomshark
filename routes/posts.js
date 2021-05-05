@@ -7,6 +7,8 @@ router.get('/:id', ensureAuth, postsController.getPost)
 
 router.post('/createPost', postsController.createPost)
 
+router.put('/addLike/:id', postsController.addLike)
+
 router.delete('/deletePost/:id', postsController.deletePost)
 
 module.exports = router

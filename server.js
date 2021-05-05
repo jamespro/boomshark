@@ -9,7 +9,8 @@ const logger = require('morgan')
 const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const postRoutes = require('./routes/posts')
-// const profileRoutes = require('./routes/profile')
+const methodOverride = require('method-override')
+const profileRoutes = require('./routes/profile')
 
 require('dotenv').config({path: './config/config.env'})
 
@@ -37,6 +38,9 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session())
 
+//Use forms for put / delete
+app.use(methodOverride("_method"));
+
 app.use(flash())
   
 app.use('/', mainRoutes)
@@ -44,8 +48,9 @@ app.use('/', mainRoutes)
 app.use('/post', postRoutes)
  
 
-let port = 3000
-app.listen((process.env.PORT || port), ()=>{
+
+
+app.listen((process.env.PORT), ()=>{
     console.log('Server is running, you better catch it!')
-    console.log()
+    console.log(process.env.PORT)
 })    
