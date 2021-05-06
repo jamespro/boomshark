@@ -7,33 +7,35 @@
     <header>
         <%- include('../views/partials/header'); %>
     </header>
-   
-    <% if (locals.messages.errors) { %>
-        <% messages.errors.forEach( el => { %>
-            <div class="alert alert-danger"><%= el.msg %></div>
-        <% }) %>    
-    <% } %>
-    <% if (locals.messages.info) { %>
-        <% messages.info.forEach( el => { %>
-            <div class="alert alert-danger"><%= el.msg %></div>
-        <% }) %>    
-    <% } %>
+    <div class="container">
+        <% if (locals.messages.errors) { %>
+            <% messages.errors.forEach( el => { %>
+                <div class="alert alert-danger"><%= el.msg %></div>
+            <% }) %>
+        <% } %>
+        <% if (locals.messages.info) { %>
+            <% messages.info.forEach( el => { %>
+                <div class="alert alert-danger"><%= el.msg %></div>
+            <% }) %>
+        <% } %>
 
-    <section class="form-parent">
-        <form action="/login" method="POST">
-            <label for="email">Email Address</label>
-            <input type="email" name="email" placeholder="Email">
+        <section class="form-parent">
+            <form action="/login" method="POST">
+                <label for="email">Email Address</label>
+                <input type="email" name="email" placeholder="Email">
 
-            <label for="password"> Password</label>
-            <input type="password" name="password" placeholder="Password">
-            <section class="signup-buttons">
-                <a href="/">
-                    <input type="button" value="Back" class="sec-button">
-                </a>
-                <input value="Sign in" type="submit" class="main-button">
-            </section>  
-        </form>
-    </section>
-   
+                <label for="password"> Password</label>
+                <input type="password" name="password" placeholder="Password">
+
+                <div class="signup-buttons">
+                    <a href="/">
+                        <input type="button" value="Back" class="sec-button">
+                    </a>
+                    <input value="Sign in" type="submit" class="main-button">
+                </div>
+
+            </form>
+        </section>
+    </div>
 </body>
 </html>

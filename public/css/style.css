@@ -5,44 +5,66 @@
 }
 .not{
     text-decoration: underline;
-}
- */
+}  */
 
-/**
-
-******************************************
+/********************************************
 /* CSS
 /*******************************************/
 
+@import url('https://fonts.googleapis.com/css2?family=Karla&family=Montserrat:wght@400;700&display=swap');
+
 /* Box Model Hack */
-*{
-    box-sizing: border-box;
-  }
-  
-  /* Clear fix hack */
-  .clearfix:after {
+* {
+box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
     content: ".";
     display: block;
     clear: both;
     visibility: hidden;
     line-height: 0;
     height: 0;
-  }
-  
-  .clear {
-  clear: both;
-  }
-  /******************************************
-  /* LAYOUT
-  /*******************************************/
-  body{
+}
+
+.clear {
+    clear: both;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+body {
     color: #0c0f0a;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
-  }
-  
+}
 
-  /***
+.container {
+    display: grid;
+    max-width: 1200px;
+    align-items: center;
+    justify-content: center;
+}
+
+.tagline {
+    font-family: 'Karla', sans-serif;
+    font-size: 35px;
+}
+
+button {
+    color: #fff;
+    background: #4FA8FF;
+    font-size: 22px;
+    width: 200px;
+    height: 68px;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 4 4 (0, 0, 0, 0.25);
+}
+
+/***
 Styles to define:
 - Primary Color
 - Primary Button
@@ -57,199 +79,223 @@ Styles to define:
 **/
 
 
-.header{
+.header {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.header > img{
+.header > img {
     width: 600px;
 }
 
-.form-parent{
+.form-parent {
     display: flex;
+    margin: 100px auto;
     flex-flow: column;
     align-items: center;
-    
 }
 
-form{
+form {
     display: flex;
     flex-flow: column wrap;
     align-items: flex-start;
 }
-form input{
+
+form input {
     width: 582px;
     height: 43px;
     margin: 5px 0px 20px 0px;
     padding-left: 20px;
 }
 
-.input-with-bottom-text{
+.input-with-bottom-text {
     margin-bottom: 0px;
-}
+    }
 
-.bottom-text{
-    font-size: 0.7rem;
+.bottom-text {
+    /* font-size: 0.7rem; */
     color: gray;
     margin: 5px 0px 20px 0px;
 }
 
-.signup-buttons{
+.signup-buttons {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     width: 100%;
+    font-size: 22px;
 }
 
-route-links{
+.profile-buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 18px;
+}
+
+.profilePosts {
+    margin: 40px 0 20px;
+}
+
+route-links {
     display: flex;
     width: 30%;
     justify-content: center;
 }
 
- .sec-button{
-     width: 100%;
-     margin-right: 10px;
-     padding: 8px 24px;
-     background: white;
-     border: 1px solid #4FA8FF;
-     border-radius: 5px;
-     color: #4FA8FF;
- }
+.sec-button {
+    width: 200px;
+    margin-right: 10px;
+    height: 68px;
+    padding: 8px 24px;
+    background: white;
+    border: 2px solid #4FA8FF;
+    border-radius: 6px;
+    color: #4FA8FF;
+}
 
- .main-button{
-    width: 70%;
-     /* margin-right: 10px; */
+.main-button{
+    width: 200px;
+    height: 68px;
+    /* margin-right: 10px; */
     padding: 12px 24px;
     background: #4FA8FF;
     color: white;
     border: none;
-    border-radius: 5px;
- }
+    border-radius: 6px;
+}
 
- .alert{
-     background: whitesmoke;
-     color: tomato;
-     font-size: 0.7rem;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
- }
+.alert{
+    background: whitesmoke;
+    color: tomato;
+    font-size: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-info {
+    max-width: 800px;
+    margin: 35px auto;
+}
+
+.profile-info h3 {
+    font-size: 20px;
+}
+
 
 /******************************************
 /* Landing Page
 /*******************************************/
- .landingPageButton{
-
+.landingPageButton{
     display: flex;
     align-items: center;
     justify-content: center;
- }
- .landingPageButton > form > button{
-
-    width: 6.7em;
+}
+.landingPageButton > form > button{
+    margin: 30px 10px ;
+    /* width: 6.7em;
     height: 2em;
-    margin: 0px 10px ;
     color: white;
     background: #4FA8FF;
     border-color: white;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    font-size: 30px;
-    
- }
+    font-size: 30px; */
+}
 
- .landingPageImg{
-    
-     margin: 5% 10%;
-     height: 100vh;
-     
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     
-     background: hsla(0, 47%, 81%, 0.932);
-     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
- }
-
-/* PROFILE PAGE STYLE */
-
- .center-align-items{
-     display: flex;
-     flex-direction: row;
-     justify-content: center;
-     width: 100%;
-     
- }
-
- .center-align-items > h3:first-child{
-     margin-right: 280px;
- }
-
- .card{
-    box-shadow: 0px 7px 30px -10px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    padding: 20px;
-    margin: 0px 300px;
- }
-
- .single-button{
-     width: 50%;
- }
-
- .inner-button-link{
-     display: inline;
- }
-
- .inner-text-button{
-     display: inline;
-     margin-left: -582px;
-     height: 41px;
-     /* background: #f5f5f5; */
-     /* border: 1px #f5f5f5 solid; */
-     padding: 10px;
-     border-radius: 5px;
- }
-
- .warning{
-     border: orange 2px solid;
-     color: orange;
- }
-
- .danger{
-    border: tomato 2px solid;
-    color: tomato;
- }
-
- .main-button-distinct{
-     background: #d8ebff;
- }
-
-
-
- /* Feed */
- /* .postRow{
-
+/* .landingPageImg {
+    margin: 5% 10%;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap; 
- }
+    background: hsla(0, 47%, 81%, 0.932);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+} */
 
- .postRow{
+/* PROFILE PAGE STYLE */
+
+.center-align-items {
     display: flex;
-    flex-direction: column;
-    flex-basis: 100%;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
 
- }
- .postColum{
-    
-    width: 400px;
-    height: 400px;
-    background: rgb(179, 36, 36);
-    margin: 20px 60px;
-    border: red 2px solid;
-   
- } */
+}
+.center-align-items > h3:first-child {
+    margin-right: 200px;
+}
+
+.card {
+    box-shadow: 0px 7px 30px -10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: 50px 0;
+    padding: 20px 0;
+}
+
+/*.single-button {
+     width: 50%;
+}*/
+
+.inner-button-link {
+    display: inline;
+}
+
+.inner-text-button {
+    display: inline;
+    margin-left: -582px;
+    height: 41px;
+    /* background: #f5f5f5; */
+    /* border: 1px #f5f5f5 solid; */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.warning {
+    border: orange 2px solid;
+    color: orange;
+}
+
+.danger {
+    border: tomato 2px solid;
+    color: tomato;
+}
+
+.main-button-distinct{
+    background: #d8ebff;
+}
+
+
+
+/* Feed */
+.feedHeader {
+    font-weight: 700;
+    font-size: 36px;
+}
+
+
+/* .postRow{
+
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: row;
+flex-wrap: wrap;
+}
+
+.postRow{
+display: flex;
+flex-direction: column;
+flex-basis: 100%;
+
+}
+.postColum{
+width: 400px;
+height: 400px;
+background: rgb(179, 36, 36);
+margin: 20px 60px;
+border: red 2px solid;
+
+} */
