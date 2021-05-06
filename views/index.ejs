@@ -2,21 +2,22 @@
 <html lang="en">
 <head>
     <%- include('../views/partials/head'); %>
-   
+
 </head>
 <body>
-    <header> 
-    <%- include('../views/partials/header'); %>
+    <header>
+        <%- include('../views/partials/header'); %>
     </header>
-
-    <div class= "landingPageButton">
-        <form action="./login" method="GET">
-            <button type="submit">Login</button>
-        </form>
-        <form action="./signup">
-            <button type="submit">SignUp</button>
-        </form>
-    </div>
+    <div class="container">
+        <div class= "landingPageButton">
+            <form action="./login" method="GET">
+                <button type="submit">Login</button>
+            </form>
+            <form action="./signup">
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
     <div class="landingPageImg">THE Boom Feed Here</div>
+</div>
 </body>
 </html>
