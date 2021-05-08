@@ -43,7 +43,7 @@ module.exports = {
                 //image: req.body.postImage,
                 caption: req.body.postCaption,
                 link: req.body.postLink,
-                likes: 1,
+                likes: 0,
                 user: req.user.id
             })
             console.log('Post has been added!')
