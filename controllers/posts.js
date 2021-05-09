@@ -1,3 +1,4 @@
+const cloudinary = require("../middleware/cloudinary");
 const { ObjectID } = require('bson');
 const Post = require('../models/Post')
 
@@ -38,9 +39,13 @@ module.exports = {
     //create Post, the action is found in .views/dash.ejs
     createPost: async (req, res)=>{
         try{
+            // Upload image to cloudinary
+            const result = await cloudinary.uploader.upload(req.file.path);
+
             await Post.create({
                 title: req.body.postTitle,
-                //image: req.body.postImage,
+                image: result.secure_url,
+                cloudinaryId: result.public_id,
                 caption: req.body.postCaption,
                 link: req.body.postLink,
                 likes: 0,
@@ -69,20 +74,22 @@ module.exports = {
         res.json("Like")
 
     },
-   
+
     deletePost: async (req, res)=>{
 
         console.log(req.params.id)
-       
-        try{
-            await Post.findOneAndDelete({_id:req.params.id})
-            console.log('Deleted Post')
-            
-           
-            
-        }catch(err){
-            console.log(err)
+
+        try {
+            // Find post by id
+            let post = await Post.findById({ _id: req.params.id });
+            // Delete image from cloudinary
+            await cloudinary.uploader.destroy(post.cloudinaryId);
+            // Delete post from db
+            await Post.remove({ _id: req.params.id });
+            console.log("Deleted Post");
+            res.redirect("/profile");
+        } catch (err) {
+            res.redirect("/profile");
         }
-        res.redirect('/feed')
-    }
+    },
 }    
