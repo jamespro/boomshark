@@ -16,7 +16,7 @@
 
         <div class="form-parent card">
             <h3>Add a Boom</h3>
-            <form action="/post/createPost" method='POST'>
+            <form action="/post/createPost" enctype="multipart/form-data" method='POST'>
                 <label for="postTitle">Title</label>
                 <input type="text" placeholder="Enter Title" name='postTitle'>
 
@@ -24,8 +24,14 @@
                 <input type="text" placeholder="Caption" name='postCaption'>
 
                 <section>
-                    <label for="imageUpload">Upload Image</label>
-                    <input type="file" name="imageUpload" id="imageUpload" class="inner-text-button">
+                    <label for="postImage">Image</label>
+                <label for="imgUpload" class="form-label">Image</label>
+                <input type="file" class="form-control" id="imageUpload" name="file">
+
+                    <!-- <section>
+                            <input type="text" placeholder="Image" name='postImage'>
+                            <input type="file" name="imageLink" id="pathToImage" class="inner-text-button">
+                        </section> -->
                 </section>
 
                 <label for="postLink">Link (https://)</label>
