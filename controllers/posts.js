@@ -1,5 +1,6 @@
 const cloudinary = require("../middleware/cloudinary");
-const { ObjectID } = require('bson');
+//this is not in the example:
+//const { ObjectID } = require('bson');
 const Post = require('../models/Post')
 
 module.exports = {
@@ -58,6 +59,7 @@ module.exports = {
         }
     },
     //likePost will go here
+    //this is quite different from the example:
     addLike: async (req, res)=>{
 
         console.log("chieck")
