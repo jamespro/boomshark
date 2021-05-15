@@ -12,6 +12,11 @@
 
 Boomshark will be an app for sharing projects that you're working on. Posts will include a title, image, description, and a link to the live url or github (and maybe tagging as well if we can get added within a week). 
 
+New ideas to focus the concept:
+* BOOM! SHARK ALERTS: post SHARK SIGHTING photos: Because in some areas, dangerous sharks are changing their patterns due to global warming and are being found along beaches where they have not been seen before. Could include map function. Could it get the location data from the photo?
+* Twitch DJ streamcap posts: Take a screencap of your favorite streamer, post it here to share with friends! Maybe Twitch DJ focused. Maybe any kind of streamer.
+
+
 ---
 
 # Objectives
