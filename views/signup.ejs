@@ -7,41 +7,41 @@
     <header>
         <%- include('../views/partials/header'); %>
     </header>
+    <div class="container">
+        <% if (locals.messages.errors) { %>
+            <% messages.errors.forEach( el => { %>
+                <div class="alert alert-danger">
+                    <ul>
+                        <li><%= el.msg %></li>
+                    </ul>
 
-    <% if (locals.messages.errors) { %>
-        <% messages.errors.forEach( el => { %>
-            <div class="alert alert-danger">
-                <ul>
-                    <li><%= el.msg %></li>
-                </ul>
-                
-            </div>
-        <% }) %>    
-    <% } %>
+                </div>
+            <% }) %>
+        <% } %>
 
-    <section class="form-parent">
-        <form action="/signup" method="POST">
-            <label for="userName">Username</label>
-            <input type="text" name="userName" placeholder="User Name">
-    
-            <label for="userName">Email</label>
-            <input type="email" name="email" placeholder="Email" class="input-with-bottom-text">
-            <p class="bottom-text">We’ll never share your email with anyone else.</p>
-    
-            <label for="userName">Password</label>
-            <input type="password" name="password" placeholder="Password">
-    
-            <label for="userName">Confirm Password</label>
-            <input type="password" name="confirmPassword" placeholder="Confirm Password">  
-    
-            <section class="signup-buttons">
-                <a href="/">
-                    <input type="button" value="Back" class="sec-button">
-                </a>
-                <input value="Signup" type="submit" class="main-button">
-            </section>  
-        </form>
-    </section>
-    
+        <div class="form-parent">
+            <form action="/signup" method="POST">
+                <label for="userName">Username</label>
+                <input type="text" name="userName" placeholder="User Name">
+
+                <label for="userName">Email</label>
+                <input type="email" name="email" placeholder="Email" class="input-with-bottom-text">
+                <p class="bottom-text">We’ll never share your email with anyone else.</p>
+
+                <label for="userName">Password</label>
+                <input type="password" name="password" placeholder="Password">
+
+                <label for="userName">Confirm Password</label>
+                <input type="password" name="confirmPassword" placeholder="Confirm Password">
+
+                <div class="signup-buttons">
+                    <a href="/">
+                        <input type="button" value="Back" class="sec-button">
+                    </a>
+                    <input value="Signup" type="submit" class="main-button">
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

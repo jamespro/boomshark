@@ -7,67 +7,73 @@
     <header>
         <%- include('../views/partials/header'); %>
     </header>
-    <section class="center-align-items">
-            <h3>User name: <%=user.userName %></h3>
-            <h3>Email: <%= user.email %></h3>
-    </section>
-    
-    
+    <div class="container">
+        <div class="center-align-items profile-info">
+                <h3><strong>User name:</strong> <%=user.userName %></h3>
+                <h3><strong>Email:</strong> <%= user.email %></h3>
+        </div>
 
-    <section class="form-parent card">
-        <h3>Add a Boom</h3>
-        <form action="/post/createPost" method='POST'>
-            <label for="postTitle">Title</label>
-            <input type="text" placeholder="Enter Title" name='postTitle'>
 
-            <label for="postCaption">Description</label>
-            <input type="text" placeholder="Caption" name='postCaption'>
+        <div class="form-parent card">
+            <h3>Add a Boom</h3>
+            <form action="/post/createPost" enctype="multipart/form-data" method='POST'>
+                <label for="postTitle">Title</label>
+                <input type="text" placeholder="Enter Title" name='postTitle'>
 
-            <section>
-                <label for="postImage">Image</label>
-                    <section>
-                        <input type="text" placeholder="Image" name='postImage'>
-                        <input type="file" name="imageLink" id="pathToImage" class="inner-text-button">
-                    </section>
-            </section>
-            
+                <label for="postCaption">Description</label>
+                <input type="text" placeholder="Caption" name='postCaption'>
 
-            <label for="postLink">URL</label>
-            <input type="text" placeholder="Image" name='postLink'>
+                <section>
+                    <label for="postImage">Image</label>
+                <label for="imgUpload" class="form-label">Image</label>
+                <input type="file" class="form-control" id="imageUpload" name="file">
 
-            <section class="center-align-items">
-                <input type="submit" value="Post" class="single-button main-button ">
-            </section>
+                    <!-- <section>
+                            <input type="text" placeholder="Image" name='postImage'>
+                            <input type="file" name="imageLink" id="pathToImage" class="inner-text-button">
+                        </section> -->
+                </section>
 
-            <section class="signup-buttons">
-                <a href="/feed">
-                    <input type="button" value="Return to feed" class="sec-button main-button-distinct">
-                </a>
+                <label for="postLink">Link (https://)</label>
+                <input type="text" placeholder="URL" name='postLink'>
 
-                <a href="/resetPassword">
-                    <input type="button" value="Reset Password" class="sec-button danger">
-                </a>
+                <section class="center-align-items">
+                    <input type="submit" value="Post" class="single-button main-button ">
+                </section>
 
-                <a href="/logout">
-                    <input type="button" value="Logout" class="sec-button warning">
-                </a> 
-            </section>  
-        </form>    
+            </form>
+        </div>
+                <div class="profile-buttons">
+                    <a href="/feed">
+                        <input type="button" value="Return to feed" class="sec-button main-button-distinct">
+                    </a>
 
-    </section>
+                    <a href="/resetPassword">
+                        <input type="button" value="Reset Password" class="sec-button danger">
+                    </a>
 
-    <h3>Posts for <%= user.userName %></h3>
-    <ul>
-        <% for (var i=0; i < posts.length; i++) { %>
-        <li>
-            <p class="title"><a href="/post/<%= posts[i]._id%>"><%= posts[i].title %></a></p>
-            <p class="caption"><%= posts[i].caption %></p>
-            <p class="image"><a href="<%= posts[i].link %>" class=""><img class="" src="<%= posts[i].image %>" /></a></p>
-            <p class="link"><a href="<%= posts[i].link %>" class=""><%= posts[i].link %></a></p>
-        </li>
-        <% } %>
-    </ul>
+                    <a href="/logout">
+                        <input type="button" value="Logout" class="sec-button warning">
+                    </a>
+                </div>
 
+
+
+        <div class="profilePosts">
+            <h3>Posts for <%= user.userName %></h3>
+            <ul>
+                <% for (var i=0; i < posts.length; i++) { %>
+                <li>
+                    <p class="title"><a href="/post/<%= posts[i]._id%>"><%= posts[i].title %></a></p>
+                    <p class="caption"><%= posts[i].caption %></p>
+                    <p class="image"><a href="<%= posts[i].link %>" class=""><img class="" src="<%= posts[i].image %>" /></a></p>
+                    <p class="link"><a href="<%= posts[i].link %>" class=""><%= posts[i].link %></a></p>
+                    <p class="like"><i class="fas fa-heart fa-3x"><%= posts[i].likes %></i></p>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
     <script src="js/main.js"></script>
 </body>
 </html>
