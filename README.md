@@ -1,6 +1,6 @@
 # Boomshark
 
-![Boomshark](https://raw.githubusercontent.com/jamespro/boomshark/main/public/img/banner.png)
+![Boomshark](https://raw.githubusercontent.com/jamespro/boomshark/main/public/img/boomshark-logo.png)
 
 * Demo: [https://boomshark.herokuapp.com/](https://boomshark.herokuapp.com/)
 
