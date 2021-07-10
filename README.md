@@ -33,7 +33,7 @@ New ideas to focus the concept:
 
 # Packages/Dependencies used
 
-connect-mongo, dotenv, ejs, express, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local
+bcrypt, cloudinary, connect-mongo, dotenv, ejs, express, express-session, method-override, mongodb, mongoose, morgan, nodemon, passport, passport-local, validator
 
 ---
 
@@ -45,9 +45,13 @@ connect-mongo, dotenv, ejs, express, express-session, mongodb, mongoose, morgan,
 
 # Things to add
 
-- Create a `.env` file and add the following as `key: value`
-  - PORT: 2121 (can be any port example: 3000)
-  - DB_STRING: `your database URI`
+- Create a `.env` file at /config/.env and add the following as `key=value`
+  - PORT=2121 (can be any port example: 3000)
+  - DB_STRING=`your database URI`
+  - CLOUD_NAME=`cloudinary name`
+  - CLOUD_API_KEY=`cloudinary api_key`
+  - CLOUD_API_SECRET=`cloudinary api_secret`
+
  ---
 
 
