@@ -1,3 +1,4 @@
+require('dotenv').config({path: './config/.env'})
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
@@ -12,7 +13,6 @@ const mainRoutes = require('./routes/main')
 const postRoutes = require('./routes/posts')
 const profileRoutes = require('./routes/profile')
 
-require('dotenv').config({path: './config/.env'})
 
 // Passport config
 require('./config/passport')(passport)
