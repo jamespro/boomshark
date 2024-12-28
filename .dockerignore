@@ -1,0 +1,7 @@
+node_modules
+.env
+config/database.js
+config/.env
+config/config.js
+config/config.env
+*.env
