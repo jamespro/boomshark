@@ -62,12 +62,14 @@ Hosting options may include:
 
 - fly.io has a CLI
   - `flyctl` and `fly`... `fly help`
+  - 'fly launch' to get docker files, fly.toml, etc. and set up initial app
   - `flyctl status` `flyctl deploy`
 - Created the "deployment" in the web interface. It needed to create then add 3 files to the repo. I needed to go to GitHub and approve and merge these files. Then I updated my local repo.
 - SECRETS: You need to put your environment variables i.e. keys for your services, into "secrets", either via fly's web admin or CLI. You should re-deploy whenever you update secrets.
   - https://fly.io/docs/apps/secrets/#setting-secrets
   - PORT: Not sure if I need to let Fly determine the port and therefore not put into a secret??
 - LIVE LOGS: Check web admin or CLI `flyctl logs`
+-
 
 ---
 
