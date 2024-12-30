@@ -5,3 +5,6 @@ config/.env
 config/config.js
 config/config.env
 *.env
+filelist.txt
+public/.DS_Store
+.DS_Store
