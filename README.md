@@ -64,12 +64,14 @@ Hosting options may include:
   - `flyctl` and `fly`... `fly help`
   - 'fly launch' to get docker files, fly.toml, etc. and set up initial app
   - `flyctl status` `flyctl deploy`
+- LIVE LOGS: Check web admin or CLI `flyctl logs` - KEEP OPEN WHEN DEPLOYING to see problems right away!
 - Created the "deployment" in the web interface. It needed to create then add 3 files to the repo. I needed to go to GitHub and approve and merge these files. Then I updated my local repo.
 - SECRETS: You need to put your environment variables i.e. keys for your services, into "secrets", either via fly's web admin or CLI. You should re-deploy whenever you update secrets.
   - https://fly.io/docs/apps/secrets/#setting-secrets
   - PORT: Not sure if I need to let Fly determine the port and therefore not put into a secret??
-- LIVE LOGS: Check web admin or CLI `flyctl logs`
--
+  - ! PORT - Need to set a SECRET in FLY ADMIN!
+    - SET THE SECRET, in Fly admin, for PORT, set = 3000
+    - Can LEAVE IT in the code as 2121 (pretty sure)
 
 ---
 
@@ -90,3 +92,29 @@ Hosting options may include:
   - CLOUD_API_SECRET=`cloudinary api_secret`
 
   ***
+
+# Outline
+
+- /
+- /post
+- /login
+- /signup
+- /feed
+- /profile
+
+# Current Activity
+
+- [x] Landing page, make graphic smaller; replace
+- [] Profile page: make narrower; flows off-screen
+
+## Takeaways
+
+### Top Detail Takeaways
+
+- Deploying (fly.io and maybe others): set the port
+- Docker: Check dockerignore to make sure no files you need are being ignored and not deployed. (also .gitignore)
+
+### Top Major Takeaways
+
+- Services: Make sure they are active. Log in to check that MongoDB, Cloudinary, etc. are live and allowing the right access, either very open or restricted to your IP address or certain IP addresses.
+- Services: Check that their startup time is not so long that your requests timeout before your service is ready. Consider using hosting that is always-up.
