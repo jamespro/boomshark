@@ -106,3 +106,15 @@ Hosting options may include:
 
 - [x] Landing page, make graphic smaller; replace
 - [] Profile page: make narrower; flows off-screen
+
+## Takeaways
+
+### Top Detail Takeaways
+
+- Deploying (fly.io and maybe others): set the port
+- Docker: Check dockerignore to make sure no files you need are being ignored and not deployed. (also .gitignore)
+
+### Top Major Takeaways
+
+- Services: Make sure they are active. Log in to check that MongoDB, Cloudinary, etc. are live and allowing the right access, either very open or restricted to your IP address or certain IP addresses.
+- Services: Check that their startup time is not so long that your requests timeout before your service is ready. Consider using hosting that is always-up.
