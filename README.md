@@ -106,6 +106,7 @@ Hosting options may include:
 
 - [x] Landing page, make graphic smaller; replace
 - [] Profile page: make narrower; flows off-screen
+- [ ] Update handleCameraUpload because getting 500 server error because it's having a problem with "id". Sounds like it really wants a logged in user... but maybe for testing we can say it's optional. Maybe should have a default user for dev.
 
 ## Takeaways
 
