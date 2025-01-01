@@ -11,7 +11,17 @@ module.exports = {
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path);
 
-      // Create a new post with minimal information
+      // Parse event descriptor safely
+      const eventDescriptor = req.body.event_descriptor ? JSON.parse(req.body.event_descriptor) : null;
+
+      // Extract DisplayName and EventTime
+      const displayName = eventDescriptor ? eventDescriptor.Config.DisplayName : "Unknown Detector";
+      const eventTime = eventDescriptor ? eventDescriptor.EventTime : "Unknown Time";
+
+      // Create a caption combining DisplayName and EventTime
+      const caption = `${displayName} at ${eventTime}`;
+
+    // Create a new post with minimal information
       //   await Post.create({
       //     image: result.secure_url,
       //     cloudinaryId: result.public_id,
@@ -36,9 +46,7 @@ module.exports = {
         title: "Camera Upload", // Set a default title or extract from event_descriptor
         image: result.secure_url,
         cloudinaryId: result.public_id,
-        caption: req.body.event_descriptor
-          ? JSON.parse(req.body.event_descriptor).EventInfo.Text
-          : "Camera Upload",
+        caption: caption, // Use the constructed caption
         link: "", // Set a default link if required
         likes: 0,
         user: mongoose.Types.ObjectId(process.env.DEFAULT_USER_ID), // Use a specific user's ObjectId
