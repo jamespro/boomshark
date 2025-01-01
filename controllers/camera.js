@@ -11,13 +11,23 @@ module.exports = {
       const result = await cloudinary.uploader.upload(req.file.path);
 
       // Create a new post with minimal information
+    //   await Post.create({
+    //     image: result.secure_url,
+    //     cloudinaryId: result.public_id,
+    //     caption: "Uploaded from EINAR camera",
+    //     likes: 0,
+    //     user: req.user ? req.user.id : null, // Add this check. TODO: Later, require a user to be logged in for security.
+    //   });
+
       await Post.create({
+        title: "Camera Upload", // Set a default title or extract from event_descriptor
         image: result.secure_url,
         cloudinaryId: result.public_id,
-        caption: "Uploaded from EINAR camera",
+        caption: req.body.event_descriptor ? JSON.parse(req.body.event_descriptor).EventInfo.Text : "Camera Upload",
+        link: "", // Set a default link if required
         likes: 0,
-        user: req.user ? req.user.id : null, // Add this check. TODO: Later, require a user to be logged in for security.
-      });
+        user: "james" // Set a default user ID for camera uploads
+    });
 
       console.log("Camera image has been uploaded!");
       res.status(200).json({ message: "Upload successful" });
