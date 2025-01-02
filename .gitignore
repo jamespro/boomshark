@@ -7,3 +7,4 @@ config/config.env
 filelist.txt
 public/.DS_Store
 .DS_Store
+config/sample-data-consolelog-20250101.txt
