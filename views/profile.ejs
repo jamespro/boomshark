@@ -12,10 +12,24 @@
                 <h3><strong>User name:</strong> <%=user.userName %></h3>
                 <h3><strong>Email:</strong> <%= user.email %></h3>
         </div>
+        
+        <div class="profile-buttons">
+            <a href="/feed">
+                <input type="button" value="Go to Feed" class="sec-button main-button-distinct">
+            </a>
 
+            <a href="/resetPassword">
+                <input type="button" value="Reset Password" class="sec-button danger">
+            </a>
+
+            <a href="/logout">
+                <input type="button" value="Logout" class="sec-button warning">
+            </a>
+        </div>
+<!-- this form needs to be centered but the CSS isn't working. Needs new html or css or both-->
 
         <div class="form-parent card">
-            <h3>Add a Boom</h3>
+            <h3>Add a Post</h3>
             <form action="/post/createPost" enctype="multipart/form-data" method='POST'>
                 <label for="postTitle">Title</label>
                 <input type="text" placeholder="Enter Title" name='postTitle'>
@@ -43,19 +57,6 @@
 
             </form>
         </div>
-                <div class="profile-buttons">
-                    <a href="/feed">
-                        <input type="button" value="Return to feed" class="sec-button main-button-distinct">
-                    </a>
-
-                    <a href="/resetPassword">
-                        <input type="button" value="Reset Password" class="sec-button danger">
-                    </a>
-
-                    <a href="/logout">
-                        <input type="button" value="Logout" class="sec-button warning">
-                    </a>
-                </div>
 
 
 
@@ -64,11 +65,11 @@
             <ul>
                 <% for (var i=0; i < posts.length; i++) { %>
                 <li>
-                    <p class="title"><a href="/post/<%= posts[i]._id%>"><%= posts[i].title %></a></p>
-                    <p class="caption"><%= posts[i].caption %></p>
-                    <p class="image"><a href="<%= posts[i].link %>" class=""><img class="" src="<%= posts[i].image %>" /></a></p>
-                    <p class="link"><a href="<%= posts[i].link %>" class=""><%= posts[i].link %></a></p>
-                    <p class="like"><i class="fas fa-heart fa-3x"><%= posts[i].likes %></i></p>
+                    <p class="post-title"><a href="/post/<%= posts[i]._id%>"><%= posts[i].title %></a></p>
+                    <p class="post-caption"><%= posts[i].caption %></p>
+                    <p class="post-image"><a href="<%= posts[i].link %>" class=""><img class="" src="<%= posts[i].image %>" /></a></p>
+                    <p class="post-link"><a href="<%= posts[i].link %>" class=""><%= posts[i].link %></a></p>
+                    <p class="post-like"><i class="fas fa-heart fa-2x"><%= posts[i].likes %></i></p>
                 </li>
                 <% } %>
             </ul>
